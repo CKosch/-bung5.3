@@ -1,7 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-
+# LALALALALALA
 hero:
   name: "Simple VitePress Site"
   text: "Training Page for Cloud Computing Course"
