@@ -1,33 +1,17 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [ release ]  # Wird ausgelöst, wenn in den release Branch gepusht wird
-
-
-# LALALALALALALALA
-
+  push: 
+    branches: [ release ] # is triggered if push event in release branch occurs
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Ausführung auf Ubuntu
+    runs-on: ubuntu-latest # run ubuntu
 
     steps:
-    - uses: actions/checkout@v2  # Checkout deines Repositories
+    - uses: actions/checkout@v2 # checkout your repo - this is an official action provided by GitHub
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'  # Oder eine andere benötigte Version
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build the project
-      run: npm run docs:build  # Baut das Projekt
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:git
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist  # Ordner mit den zu hostenden Dateien
+    - name: Run a multi-line script
+      run: |
+        echo test the checkout action,
+        ls -a
